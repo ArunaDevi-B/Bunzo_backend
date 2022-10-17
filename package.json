@@ -1,0 +1,16 @@
+{
+  "name": "order-management-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./Routes/user-route.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "node-modules": "^1.0.1"
+  }
+}
