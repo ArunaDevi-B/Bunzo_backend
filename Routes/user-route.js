@@ -5,8 +5,8 @@ const app = express();
 
 app.get('/shops', async(req,res) => {
     try{
-        await userservice.createShop(req.body);
-        res.send(true);
+        const shoplist = await userservice.getshops();
+        res.send(shoplist);
     } catch (error) {
         console.log('error in routeshops', error);
         res.status(500).send(error);
@@ -15,8 +15,8 @@ app.get('/shops', async(req,res) => {
 
 app.get('/categories', async (req,res) => {
     try {
-        await userservice.addCategory(req.body);
-        res.send(true);
+      const categorylist = await userservice.getCategory();
+        res.send(categorylist);
     } catch (error) {
         console.log('error in routeCatagory', error);
         res.status(500).send(error);
@@ -25,8 +25,8 @@ app.get('/categories', async (req,res) => {
 
 app.get('/items', async(req,res)=> {
     try{
-        await userservice.addItem(req.body);
-        res.send(true);
+        const itemlist = await userservice.getItem(req.query.type);
+        res.send(itemlist);
     } catch (error) {
         console.log('error in routeitems', error);
         res.status(500).send(error);
@@ -40,6 +40,30 @@ app.get('/cart', async(req,res) => {
     } catch (error) {
         console.log('error in route_cart', error);
         res.status(500).send(error);
+    }
+});
+
+app.post('/register', async(req,res) => {
+    try {
+        await userservice.registerUser(req.body);
+        res.send(true);
+    } catch(error) {
+        console.log("error in route-registeruser", error);
+        res.status(500).send(error);
+    }
+});
+
+app.post('/login', async(req,res) => {
+    try {
+        const login = await userservice.loginUser(req.body);
+        console.log(login)
+        if (!login) {
+            res.status(401).send(login);
+            return;
+        }
+        res.send(login);
+    } catch (error) {
+        console.log('error in loginUser', error);
     }
 });
 
