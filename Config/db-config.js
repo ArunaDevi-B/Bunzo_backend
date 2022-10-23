@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 function connectDB(){
-    mongoose.connect('mongodb://localhost:27017/order-management', {
+    mongoose.connect('mongodb+srv://Aruna:Aruna123@cluster0.ndwq8ot.mongodb.net/order_management', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
