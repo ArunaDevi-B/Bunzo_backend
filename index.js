@@ -15,3 +15,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is successfully running at port: ${PORT}`)
 });
+
+process.on('uncaughtException', function(err) {
+    console.log('uncaught exception', err);
+});

@@ -3,6 +3,10 @@ const userservice = require('../Services/user-services');
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send('server health is good');
+});
+
 app.get('/shops', async(req,res) => {
     try{
         const shoplist = await userservice.getshops();
