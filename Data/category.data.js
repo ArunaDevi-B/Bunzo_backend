@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
 const Categories = new mongoose.Schema({
+    id: {
+        type: Number,
+    },
+    categoryImg: {
+        type: String,
+    },
     categoryName: {
         type: String,
     },

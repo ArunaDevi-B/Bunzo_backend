@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
 const ItemData = new mongoose.Schema({
+    id: {
+        type: Number,
+    },
+    itemType: {
+        type: String,
+    },
     itemName: {
         type: String,
     }, 
-    cost: {
+    price: {
         type: Number,
     }
 });

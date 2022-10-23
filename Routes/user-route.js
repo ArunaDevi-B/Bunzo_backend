@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/shops', async(req,res) => {
     try{
-        await userservice.createShop({shopName: 'Balaji SuperMarket'});
+        await userservice.createShop(req.body);
         res.send(true);
     } catch (error) {
         console.log('error in routeshops', error);
@@ -15,7 +15,7 @@ app.get('/shops', async(req,res) => {
 
 app.get('/categories', async (req,res) => {
     try {
-        await userservice.addCategory({categoryName: 'Fruits'});
+        await userservice.addCategory(req.body);
         res.send(true);
     } catch (error) {
         console.log('error in routeCatagory', error);
@@ -25,7 +25,7 @@ app.get('/categories', async (req,res) => {
 
 app.get('/items', async(req,res)=> {
     try{
-        await userservice.addItem({itemName: "Apple", cost: 160});
+        await userservice.addItem(req.body);
         res.send(true);
     } catch (error) {
         console.log('error in routeitems', error);
@@ -35,7 +35,7 @@ app.get('/items', async(req,res)=> {
 
 app.get('/cart', async(req,res) => {
     try {
-        await userservice.addToCart({cartItemName: "Orange", cost: 60});
+        await userservice.addToCart(req.body);
         res.send(true);
     } catch (error) {
         console.log('error in route_cart', error);
@@ -43,13 +43,13 @@ app.get('/cart', async(req,res) => {
     }
 });
 
-app.get('/', async(req,res)=>{ 
-    try{
-        const restaurants = await userservice.getUser();
-        res.send(restaurants);
-    } catch (error) {
-        console.log('error in get_res', error);
-    }
-})
+// app.get('/', async(req,res)=>{ 
+//     try{
+//         const restaurants = await userservice.getUser();
+//         res.send(restaurants);
+//     } catch (error) {
+//         console.log('error in get_res', error);
+//     }
+// })
 
 module.exports = app;

@@ -7,7 +7,9 @@ app.use(express.json());
 db.connectDB();
 
 app.use(Routes);
+const PORT = process.env.PORT || 9000;
 
-app.listen(3000, () => {
-    console.log("Server is successfully running at port 3000")
+
+app.listen(PORT, () => {
+    console.log(`Server is successfully running at port 3000: ${PORT}`)
 });
