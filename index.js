@@ -9,7 +9,7 @@ app.use(cors());
 db.connectDB();
 
 app.use(Routes);
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3000;
 
 
 app.listen(PORT, () => {
