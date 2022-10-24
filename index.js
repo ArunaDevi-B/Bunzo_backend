@@ -9,10 +9,8 @@ app.use(cors());
 db.connectDB();
 
 app.use(Routes);
-const PORT = process.env.PORT || 3000;
 
-
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is successfully running at port: ${PORT}`)
 });
 
