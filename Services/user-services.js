@@ -78,6 +78,16 @@ class UserService {
         }
     }
 
+    async updateData() {
+        try {
+            console.log('updating');
+            const itemList = await items.updateMany({itemType: 'vegetables'},{itemType: 'Vegetables'} );
+            return itemList;
+        } catch (error) {
+            console.log('error in routeaddItems', error)
+        }
+    }
+
     // async getUser() {
     //     try {
     //         const userList = await usersData.find({});

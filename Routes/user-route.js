@@ -71,13 +71,13 @@ app.post('/login', async(req,res) => {
     }
 });
 
-// app.get('/', async(req,res)=>{ 
-//     try{
-//         const restaurants = await userservice.getUser();
-//         res.send(restaurants);
-//     } catch (error) {
-//         console.log('error in get_res', error);
-//     }
-// })
+app.get('/update', async(req,res)=>{ 
+    try{
+        const restaurants = await userservice.updateData();
+        res.send(restaurants);
+    } catch (error) {
+        console.log('error in get_res', error);
+    }
+})
 
 module.exports = app;

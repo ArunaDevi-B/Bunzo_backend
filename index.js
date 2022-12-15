@@ -10,8 +10,8 @@ db.connectDB();
 
 app.use(Routes);
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server is successfully running at port: ${process.env.PORT || 3000}`)
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server is successfully running at port: ${process.env.PORT || 3001}`)
 });
 
 process.on('uncaughtException', function(err) {
