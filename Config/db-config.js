@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 function connectDB(){
-    mongoose.connect('mongodb+srv://Aruna:Aruna123@cluster0.ndwq8ot.mongodb.net/order_management', {
+    console.log(process.env);
+    mongoose.connect(process.env.Mongo_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

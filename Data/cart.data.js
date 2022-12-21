@@ -7,6 +7,8 @@ const cartItems = new mongoose.Schema({
     cost: {
         type: Number,
     }
+},{
+    collection:""
 });
 
 const cartItem = mongoose.model('cartItem', cartItems);

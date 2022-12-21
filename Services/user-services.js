@@ -49,6 +49,7 @@ class UserService {
             console.log('error in storeList', error);
         }
     };
+    
 
     async getCategory() {
         try {
